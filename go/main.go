@@ -5,9 +5,16 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
+	p := strings.Split(r.URL.Path, "/")[1:]
+	if p[0] != "" {
+		http.Error(w, "Not Found", http.StatusNotFound)
+		return
+	}
+
 	name, err := os.Hostname()
 	if err != nil {
 		panic(err)
