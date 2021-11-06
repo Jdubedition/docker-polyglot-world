@@ -48,7 +48,7 @@ docker build -t go-docker-polyglot-world -f go/go.Dockerfile go
 docker run -it -p 8080:8080 go-docker-polyglot-world
 ```
 
-### NodeJS
+### Node.js
 ```text
 docker build -t nodejs-docker-polyglot-world -f nodejs/nodejs.Dockerfile nodejs
 ```
