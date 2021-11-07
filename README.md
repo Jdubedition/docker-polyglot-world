@@ -8,27 +8,8 @@ Programming languages:
 * Node.js
 * More to come...
 
-## Running applications
-
-### Python
-* Install Python
-* Install a virtual environment ([pyenv](https://github.com/pyenv/pyenv-installer) is a good choice for this but others exist)
-* Activate the virtual environment (if using pyenv: `pyenv activate <env-name>`)
-* Install the dependencies `pip install -r python/requirements.txt`
-* Run the application `uvicorn python.main:app --reload`
-
-### Go
-* Install Go
-* Run the application `go run go/main.go`
-
-### Node.js
-* Install Node.js
-* `cd nodejs`
-* Install node dependencies `npm install`
-* Run the application `node server.js`
-
 ## Building and running Docker images
-Make sure you have [Docker Engine](https://docs.docker.com/engine/install/) installed.
+Make sure you have [Docker Engine](https://docs.docker.com/engine/install/) installed.  You should also checkout my article, Are You Not Contained!, on [BountifulBytes](https://bountifulbytes.com/).
 
 ### Python
 ```text
@@ -56,3 +37,22 @@ docker build -t nodejs-docker-polyglot-world -f nodejs/nodejs.Dockerfile nodejs
 ```text
 docker run -it -p 8080:8080 nodejs-docker-polyglot-world
 ```
+
+## Running applications without Docker
+
+### Python
+* Install Python
+* Install a virtual environment ([pyenv](https://github.com/pyenv/pyenv-installer) is a good choice for this but others exist)
+* Activate the virtual environment (if using pyenv: `pyenv activate <env-name>`)
+* Install the dependencies `pip install -r python/requirements.txt`
+* Run the application `uvicorn python.main:app --reload`
+
+### Go
+* Install Go
+* Run the application `go run go/main.go`
+
+### Node.js
+* Install Node.js
+* `cd nodejs`
+* Install node dependencies `npm install`
+* Run the application `node server.js`
