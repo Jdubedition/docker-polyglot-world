@@ -1,2 +1,5 @@
-__pycache__
-node_modules
+.vscode
+
+nodejs/node_modules
+
+python/__pycache__

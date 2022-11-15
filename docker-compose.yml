@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  python-docker-polyglot-world:
+    build:
+      context: python/.
+      dockerfile: python.Dockerfile
+    ports:
+      - "8081:80"
+  nodejs-docker-polyglot-world:
+    build:
+      context: nodejs/.
+      dockerfile: nodejs.Dockerfile
+    ports:
+      - "8082:8080"
+  go-docker-polyglot-world:
+    build:
+      context: go/.
+      dockerfile: go.Dockerfile
+    ports:
+      - "8083:8080"
