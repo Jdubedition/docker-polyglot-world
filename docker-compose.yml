@@ -18,3 +18,9 @@ services:
       dockerfile: go.Dockerfile
     ports:
       - "8083:8080"
+  deno-docker-polyglot-world:
+    build:
+      context: deno/.
+      dockerfile: deno.Dockerfile
+    ports:
+      - "8084:8080"
