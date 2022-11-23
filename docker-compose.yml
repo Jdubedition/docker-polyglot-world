@@ -24,3 +24,9 @@ services:
       dockerfile: deno.Dockerfile
     ports:
       - "8084:8080"
+  rust-docker-polyglot-world:
+    build:
+      context: rust/.
+      dockerfile: rust.Dockerfile
+    ports:
+      - "8085:3000"
