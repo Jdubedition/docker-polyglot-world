@@ -1,9 +1,16 @@
 from socket import gethostname
-from fastapi import FastAPI
+from starlette.applications import Starlette
+from starlette.responses import JSONResponse
+from starlette.routing import Route
 
-app = FastAPI()
+
+async def homepage(request):
+    return JSONResponse({"hello": "World", "from": gethostname()})
 
 
-@app.get("/")
-def read_root():
-    return {"hello": "World", "from": gethostname()}
+app = Starlette(
+    debug=True,
+    routes=[
+        Route("/", homepage),
+    ],
+)
