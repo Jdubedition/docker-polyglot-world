@@ -30,3 +30,9 @@ services:
       dockerfile: rust.Dockerfile
     ports:
       - "8085:3000"
+  crystal-docker-polyglot-world:
+    build:
+      context: crystal/.
+      dockerfile: crystal.Dockerfile
+    ports:
+      - "8086:8080"
