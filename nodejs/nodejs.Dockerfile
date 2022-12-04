@@ -3,9 +3,9 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY ["package.json", "yarn.lock", "./"]
 
-RUN npm ci --production
+RUN yarn install --production
 
 COPY server.js .
 
