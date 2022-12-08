@@ -1,14 +1,17 @@
+use gethostname::gethostname;
+use hyper::header::{HeaderValue, CONTENT_TYPE};
+use hyper::service::{make_service_fn, service_fn};
+use hyper::{Body, Request, Response, Server};
 use std::convert::Infallible;
 use std::net::SocketAddr;
-use hyper::{Body, Request, Response, Server};
-use hyper::service::{make_service_fn, service_fn};
-use hyper::header::{HeaderValue, CONTENT_TYPE};
-use gethostname::gethostname;
 
 async fn hello_world(_req: Request<Body>) -> Result<Response<Body>, Infallible> {
     println!("INFO: received request");
-    let mut response = Response::new(format!("{{\"hello\":\"World\", \"from\":{:?}}}", gethostname()).into());
-    response.headers_mut().insert(CONTENT_TYPE, HeaderValue::from_static("application/json"));
+    let mut response =
+        Response::new(format!("{{\"hello\":\"World\", \"from\":{:?}}}", gethostname()).into());
+    response
+        .headers_mut()
+        .insert(CONTENT_TYPE, HeaderValue::from_static("application/json"));
     Ok(response)
 }
 
