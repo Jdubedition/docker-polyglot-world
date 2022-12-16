@@ -5,7 +5,10 @@ Welcome to the repository that shares multiple implementations of Hello World we
 Programming languages:
 * Python
 * Go
-* Node.js
+* JavaScript
+* TypeScript
+* Rust
+* Crystal
 * More to come...
 
 ## Building and running Docker images
