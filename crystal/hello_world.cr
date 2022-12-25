@@ -2,7 +2,7 @@ require "http/server"
 require "system"
 
 server = HTTP::Server.new do |context|
-  context.response.content_type = "json/application"
+  context.response.content_type = "application/json"
   context.response.print %({"hello":"World", "from": "#{System.hostname}"})
   puts "#{context.request.method} #{context.request.hostname} #{context.request.path}"
 end
