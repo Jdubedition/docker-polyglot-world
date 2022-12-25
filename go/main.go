@@ -24,7 +24,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		Hello string `json:"hello"`
 		From  string `json:"from"`
 	}{
-		"Justin",
+		"World",
 		name,
 	}
 
