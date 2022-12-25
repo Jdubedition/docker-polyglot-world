@@ -16,12 +16,36 @@ Programming languages:
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Building and running Docker images
-### One at a time (Python example)
-```text
-docker build -t python-docker-polyglot-world -f python/python.Dockerfile python && docker run -it -p 8080:80 python-docker-polyglot-world
-```
-
 ### All at once with Docker Compose
 ```text
 docker compose up --build
+```
+### Python
+```text
+docker build -t python-docker-polyglot-world -f python/python.Dockerfile python && docker run -it -p 8080:8080 python-docker-polyglot-world
+```
+
+### Go
+```text
+docker build -t go-docker-polyglot-world -f go/go.Dockerfile go && docker run -it -p 8080:8080 go-docker-polyglot-world
+```
+
+### Node.js
+```text
+docker build -t nodejs-docker-polyglot-world -f nodejs/nodejs.Dockerfile nodejs  && docker run -it -p 8080:8080 nodejs-docker-polyglot-world
+```
+
+### Rust
+```text
+docker build -t rust-docker-polyglot-world -f rust/rust.Dockerfile rust  && docker run -it -p 8080:8080 rust-docker-polyglot-world
+```
+
+### Deno
+```text
+docker build -t deno-docker-polyglot-world -f deno/deno.Dockerfile deno  && docker run -it -p 8080:8080 deno-docker-polyglot-world
+```
+
+### Crystal
+```text
+docker build -t crystal-docker-polyglot-world -f crystal/crystal.Dockerfile crystal  && docker run -it -p 8080:8080 crystal-docker-polyglot-world
 ```

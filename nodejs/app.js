@@ -15,7 +15,7 @@ app.use(function (req, res, next) {
 
 app.get("/", (req, res) => {
   res.setHeader("Content-Type", "application/json");
-  res.send(JSON.stringify({ hello: "World", from: os.hostname() }));
+  res.send(JSON.stringify({ hello: "Justin", from: os.hostname() }));
 });
 
 // Export app as a module
