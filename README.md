@@ -50,6 +50,18 @@ docker build -t deno-docker-polyglot-world -f deno/deno.Dockerfile deno  && dock
 docker build -t crystal-docker-polyglot-world -f crystal/crystal.Dockerfile crystal  && docker run -it -p 8080:8080 crystal-docker-polyglot-world
 ```
 
+## Developing with Docker containers
+
+### Python
+#### With OMZ
+```text
+docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world python:3.11.0 /docker-polyglot-world/utilities/use-omz.sh
+```
+#### With BASH
+```text
+docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world python:3.11.0 /bin/bash
+```
+
 ## Inspired By
 * https://www.starlette.io/
 * https://go.dev/doc/articles/wiki/
@@ -58,3 +70,5 @@ docker build -t crystal-docker-polyglot-world -f crystal/crystal.Dockerfile crys
 * https://deno.land/manual@v1.28.3/examples/http_server
 * https://crystal-lang.org/api/1.6.2/HTTP/Server.html
 * https://docs.docker.com/build/building/multi-stage/
+* https://code.visualstudio.com/docs/devcontainers/containers
+* https://www.cyberciti.biz/faq/bash-check-if-file-does-not-exist-linux-unix/
