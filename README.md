@@ -49,3 +49,12 @@ docker build -t deno-docker-polyglot-world -f deno/deno.Dockerfile deno  && dock
 ```text
 docker build -t crystal-docker-polyglot-world -f crystal/crystal.Dockerfile crystal  && docker run -it -p 8080:8080 crystal-docker-polyglot-world
 ```
+
+## Inspired By
+* https://www.starlette.io/
+* https://go.dev/doc/articles/wiki/
+* https://expressjs.com/en/starter/hello-world.html
+* https://hyper.rs/guides/1/server/hello-world/
+* https://deno.land/manual@v1.28.3/examples/http_server
+* https://crystal-lang.org/api/1.6.2/HTTP/Server.html
+* https://docs.docker.com/build/building/multi-stage/
