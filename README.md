@@ -20,7 +20,7 @@ Programming languages:
 ```text
 docker compose up --build
 ```
-### Python
+### Python (Starlette)
 ```text
 docker build -t python-docker-polyglot-world -f python/python.Dockerfile python && docker run -it -p 8080:8080 python-docker-polyglot-world
 ```
@@ -30,12 +30,12 @@ docker build -t python-docker-polyglot-world -f python/python.Dockerfile python 
 docker build -t go-docker-polyglot-world -f go/go.Dockerfile go && docker run -it -p 8080:8080 go-docker-polyglot-world
 ```
 
-### Node.js
+### Node.js (express)
 ```text
 docker build -t nodejs-docker-polyglot-world -f nodejs/nodejs.Dockerfile nodejs  && docker run -it -p 8080:8080 nodejs-docker-polyglot-world
 ```
 
-### Rust
+### Rust (hyper)
 ```text
 docker build -t rust-docker-polyglot-world -f rust/rust.Dockerfile rust  && docker run -it -p 8080:8080 rust-docker-polyglot-world
 ```
