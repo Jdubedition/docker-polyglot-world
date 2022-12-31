@@ -14,6 +14,7 @@ Programming languages:
 ## The setup
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/) or Docker Engine plus Docker Compose
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [VSCode](https://code.visualstudio.com/download) with [Dev Containers](https://code.visualstudio.com/docs/remote/containers) extension
 
 ## Building and running Docker images
 ### All at once with Docker Compose
