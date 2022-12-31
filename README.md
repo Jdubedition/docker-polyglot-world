@@ -62,6 +62,18 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docke
 docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world python:3.11.0 /bin/bash
 ```
 
+### Go
+#### With OMZ and selecting name of the container
+```text
+docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-go golang:1.19.3 /docker-polyglot-world/utilities/use-omz.sh
+```
+
+### Node.js
+#### With OMZ and selecting name of the container
+```text
+docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-nodejs node:19 /docker-polyglot-world/utilities/use-omz.sh
+```
+
 ## Inspired By
 * https://www.starlette.io/
 * https://go.dev/doc/articles/wiki/
