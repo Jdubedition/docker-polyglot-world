@@ -72,3 +72,5 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world python:3.11.
 * https://docs.docker.com/build/building/multi-stage/
 * https://code.visualstudio.com/docs/devcontainers/containers
 * https://www.cyberciti.biz/faq/bash-check-if-file-does-not-exist-linux-unix/
+* https://ohmyz.sh/#install
+* https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
