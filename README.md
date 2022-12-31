@@ -75,6 +75,24 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docke
 docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-nodejs node:19 /docker-polyglot-world/utilities/use-omz.sh
 ```
 
+### Rust
+#### With OMZ and selecting name of the container
+```text
+docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-rust rust:1.65 /docker-polyglot-world/utilities/use-omz.sh
+```
+
+### Deno
+#### With OMZ and selecting name of the container
+```text
+docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-deno denoland/deno:1.28.1 /docker-polyglot-world/utilities/use-omz.sh
+```
+
+### Crystal
+#### With OMZ and selecting name of the container
+```text
+docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-crystal crystallang/crystal:1.6 /docker-polyglot-world/utilities/use-omz.sh
+```
+
 ## Inspired By
 * https://www.starlette.io/
 * https://go.dev/doc/articles/wiki/
