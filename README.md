@@ -53,9 +53,9 @@ docker build -t crystal-docker-polyglot-world -f crystal/crystal.Dockerfile crys
 ## Developing with Docker containers
 
 ### Python
-#### With OMZ
+#### With OMZ and selecting name of the container
 ```text
-docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world python:3.11.0 /docker-polyglot-world/utilities/use-omz.sh
+docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-python python:3.11.0 /docker-polyglot-world/utilities/use-omz.sh
 ```
 #### With BASH
 ```text
