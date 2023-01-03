@@ -128,3 +128,4 @@ go test
 * https://github.com/features/copilot
 * https://stackoverflow.com/questions/38136541/how-to-test-error-condition-for-this-function/38138024#38138024
 * https://medium.com/@durgaswaroop/writing-better-tests-in-python-with-pytest-mock-part-2-92b828e1453c
+* https://chat.openai.com/
