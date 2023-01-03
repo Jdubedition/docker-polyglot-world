@@ -22,3 +22,17 @@ def test_homepage_with_debug_off(client):
     assert response.status_code == 200
     assert response.json() == {"hello": "World", "from": gethostname()}
     app.debug = True
+
+
+def test_homepage_with_debug_on(client):
+    app.debug = True
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"hello": "World", "from": gethostname()}
+    app.debug = False
+
+
+def test_homepage_path(client):
+    response = client.get("/path")
+    assert response.status_code == 404
+    assert response.text == "Not Found"

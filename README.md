@@ -93,6 +93,17 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docke
 docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-crystal crystallang/crystal:1.6 /docker-polyglot-world/utilities/use-omz.sh
 ```
 
+## Testing
+### Unit tests
+#### Python (Pytest in Dev Container)
+```text
+pip install -r python/requirements-local.txt
+```
+
+```text
+pytest python/
+```
+
 ## Inspired By
 * https://www.starlette.io/
 * https://go.dev/doc/articles/wiki/

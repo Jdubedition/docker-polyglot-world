@@ -3,3 +3,4 @@
 nodejs/node_modules
 
 python/__pycache__
+.pytest_cache
