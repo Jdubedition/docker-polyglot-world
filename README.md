@@ -104,6 +104,15 @@ pip install -r python/requirements-local.txt
 pytest python/
 ```
 
+#### Go (Go test in Dev Container)
+```text
+cd go
+```
+
+```text
+go test
+```
+
 ## Inspired By
 * https://www.starlette.io/
 * https://go.dev/doc/articles/wiki/

@@ -8,6 +8,17 @@ import (
 	"strings"
 )
 
+// Override for testing
+var osHostname = os.Hostname
+
+func getHostname() (string, error) {
+	host, err := osHostname()
+	if err != nil {
+		return "", err
+	}
+	return host, nil
+}
+
 func handler(w http.ResponseWriter, r *http.Request) {
 	p := strings.Split(r.URL.Path, "/")[1:]
 	if p[0] != "" {
@@ -15,9 +26,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	name, err := os.Hostname()
+	name, err := getHostname()
 	if err != nil {
-		panic(err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
 	}
 
 	message := struct {
