@@ -113,6 +113,15 @@ cd go
 go test
 ```
 
+#### Nodejs (Jest in Dev Container)
+```text
+cd nodejs
+```
+
+```text
+yarn test
+```
+
 #### Rust (Rust test in Dev Container)
 ```text
 cd rust/hello-world

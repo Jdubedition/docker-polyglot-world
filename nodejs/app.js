@@ -14,8 +14,12 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  res.setHeader("Content-Type", "application/json");
-  res.send(JSON.stringify({ hello: "World", from: os.hostname() }));
+  try {
+    res.setHeader("Content-Type", "application/json");
+    res.send(JSON.stringify({ hello: "World", from: os.hostname() }));
+  } catch (err) {
+    res.status(500).send({ error: err.message });
+  }
 });
 
 // Export app as a module
