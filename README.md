@@ -113,6 +113,15 @@ cd go
 go test
 ```
 
+#### Rust (Rust test in Dev Container)
+```text
+cd rust/hello-world
+```
+
+```text
+cargo test
+```
+
 ## Inspired By
 * https://www.starlette.io/
 * https://go.dev/doc/articles/wiki/
@@ -129,3 +138,5 @@ go test
 * https://stackoverflow.com/questions/38136541/how-to-test-error-condition-for-this-function/38138024#38138024
 * https://medium.com/@durgaswaroop/writing-better-tests-in-python-with-pytest-mock-part-2-92b828e1453c
 * https://chat.openai.com/
+* https://doc.rust-lang.org/book/ch11-03-test-organization.html
+* https://stackoverflow.com/questions/63301838/how-to-read-the-response-body-as-a-string-in-rust-hyper

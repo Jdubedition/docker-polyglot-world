@@ -9,3 +9,7 @@ edition = "2021"
 hyper = { version = "0.14", features = ["full"] }
 tokio = { version = "1", features = ["full"] }
 gethostname = { version = "0.4.0" }
+
+[dev-dependencies]
+hyper = "*"
+tokio = { version = "*", features = ["full"] }

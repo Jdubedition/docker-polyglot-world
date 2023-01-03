@@ -44,3 +44,23 @@ async fn main() {
         eprintln!("server error: {}", e);
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use hyper::{Body, Request, StatusCode};
+
+    #[tokio::test]
+    async fn test_hello_world() {
+        let req = Request::new(Body::empty());
+        let res = hello_world(req).await.unwrap();
+
+        assert_eq!(res.status(), StatusCode::OK);
+        let body: Body = res.into_body();
+        let bytes = hyper::body::to_bytes(body).await.unwrap();
+        let result = String::from_utf8(bytes.into_iter().collect()).expect("");
+        assert!(result.contains("hello"));
+        assert!(result.contains("World"));
+        assert!(result.contains("from"));
+    }
+}
