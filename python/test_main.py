@@ -36,3 +36,16 @@ def test_homepage_path(client):
     response = client.get("/path")
     assert response.status_code == 404
     assert response.text == "Not Found"
+
+
+def test_homepage_mock_gethostname(client, mocker):
+    mocker.patch("main.gethostname", return_value="test-host")
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"hello": "World", "from": "test-host"}
+
+
+def test_homepage_500_error(client, mocker):
+    mocker.patch("main.gethostname", side_effect=Exception)
+    response = client.get("/")
+    assert response.status_code == 500
