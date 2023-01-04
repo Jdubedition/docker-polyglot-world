@@ -195,3 +195,4 @@ deno test --allow-sys
 - https://doc.rust-lang.org/book/ch11-03-test-organization.html
 - https://stackoverflow.com/questions/63301838/how-to-read-the-response-body-as-a-string-in-rust-hyper
 - https://medium.com/deno-the-complete-reference/unit-testing-of-http-server-in-deno-a03b1c028f92
+- https://deno.land/manual@v1.29.1/basics/testing/mocking
