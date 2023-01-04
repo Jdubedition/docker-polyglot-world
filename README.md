@@ -110,6 +110,9 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docke
 docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-deno denoland/deno:1.28.1 /docker-polyglot-world/utilities/use-omz.sh
 ```
 
+IMPORTANT! - After attaching to container:  Open the VS Code command palette with Ctrl+Shift+P, and run the Deno: Initialize Workspace Configuration command.
+
+
 ### Crystal
 
 #### With OMZ and selecting name of the container
@@ -162,6 +165,16 @@ cd rust/hello-world
 cargo test
 ```
 
+#### Deno (Deno test in Dev Container)
+
+```text
+cd deno
+```
+
+```text
+deno test --allow-sys
+```
+
 ## Inspired By
 
 - https://www.starlette.io/
@@ -181,3 +194,4 @@ cargo test
 - https://chat.openai.com/
 - https://doc.rust-lang.org/book/ch11-03-test-organization.html
 - https://stackoverflow.com/questions/63301838/how-to-read-the-response-body-as-a-string-in-rust-hyper
+- https://medium.com/deno-the-complete-reference/unit-testing-of-http-server-in-deno-a03b1c028f92
