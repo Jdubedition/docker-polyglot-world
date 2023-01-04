@@ -1,10 +1,8 @@
 require "http/server"
-require "system"
+require "./request_handler"
 
 server = HTTP::Server.new do |context|
-  context.response.content_type = "application/json"
-  context.response.print %({"hello":"World", "from": "#{System.hostname}"})
-  puts "#{context.request.method} #{context.request.hostname} #{context.request.path}"
+  handle_request(context)
 end
 
 address = server.bind_tcp "0.0.0.0", 8080

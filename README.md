@@ -175,6 +175,16 @@ cd deno
 deno test --allow-sys
 ```
 
+#### Crystal (Crystal test in Dev Container)
+
+```text
+cd crystal
+```
+
+```text
+crystal spec *_spec.cr
+```
+
 ## Inspired By
 
 - https://www.starlette.io/
@@ -196,3 +206,5 @@ deno test --allow-sys
 - https://stackoverflow.com/questions/63301838/how-to-read-the-response-body-as-a-string-in-rust-hyper
 - https://medium.com/deno-the-complete-reference/unit-testing-of-http-server-in-deno-a03b1c028f92
 - https://deno.land/manual@v1.29.1/basics/testing/mocking
+- https://crystal-lang.org/reference/1.6/guides/testing.html
+- https://github.com/crystal-lang/crystal/pull/11540
