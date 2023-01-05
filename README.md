@@ -128,11 +128,15 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docke
 #### Python (Pytest in Dev Container)
 
 ```text
-pip install -r python/requirements-local.txt
+cd python
 ```
 
 ```text
-pytest python/
+pip install -r requirements-local.txt
+```
+
+```text
+pytest
 ```
 
 #### Go (Go test in Dev Container)
