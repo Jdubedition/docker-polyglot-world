@@ -132,7 +132,7 @@ cd python
 ```
 
 ```text
-pip install -r requirements-local.txt
+pip install -r requirements.txt -r requirements-local.txt
 ```
 
 ```text
