@@ -3,7 +3,7 @@ FROM crystallang/crystal:1.6-alpine AS build
 
 WORKDIR /app
 
-COPY hello_world.cr ./
+COPY *.cr .
 RUN crystal build --release --static hello_world.cr
 
 # #run stage
