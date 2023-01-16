@@ -189,6 +189,19 @@ cd crystal
 crystal spec *_spec.cr
 ```
 
+## API testing
+
+### Postman
+* Install Postman
+* Import polyglot-world.postman_collection.json
+* Run collection
+
+### Newman
+* Use Nodejs dev container
+* `npm install -g newman`
+* Collection: `newman run polyglot-world.postman_collection.json`
+* Number and specific tests: `newman run polyglot-world.postman_collection.json -n 1 --folder Python`
+
 ## Inspired By
 
 - https://www.starlette.io/
@@ -212,3 +225,5 @@ crystal spec *_spec.cr
 - https://deno.land/manual@v1.29.1/basics/testing/mocking
 - https://crystal-lang.org/reference/1.6/guides/testing.html
 - https://github.com/crystal-lang/crystal/pull/11540
+- https://www.postman.com/
+- https://github.com/postmanlabs/newman

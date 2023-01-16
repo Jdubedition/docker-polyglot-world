@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "fd43a406-f3eb-4c29-8be9-5e3c971b82a4",
+		"name": "polyglot-world",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Python",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.50:8081",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"50"
+					],
+					"port": "8081"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.50:8084",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"50"
+					],
+					"port": "8084"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NodeJS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.50:8082",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"50"
+					],
+					"port": "8082"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Go",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.50:8083",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"50"
+					],
+					"port": "8083"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rust",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.50:8085",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"50"
+					],
+					"port": "8085"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crystal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.50:8086",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"50"
+					],
+					"port": "8086"
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"greeting\", function () {",
+					"    var jsonData = pm.response.json();",
+					"    pm.expect(jsonData.hello).to.eql(\"World\");",
+					"});",
+					"pm.test(\"host check\", function () {",
+					"    var jsonData = pm.response.json();",
+					"    pm.expect(jsonData.from).to.match(/^[a-z0-9]*$/);",
+					"});",
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	]
+}
