@@ -3,10 +3,10 @@ FROM golang:1.19.3-alpine3.16 AS build
 
 WORKDIR /app
 
-COPY go.mod ./
+COPY go/go.mod ./
 RUN go mod download
 
-COPY *.go ./
+COPY go/*.go ./
 
 RUN go build -o /helloworld
 
@@ -16,6 +16,8 @@ FROM alpine:3.16
 WORKDIR /app
 
 COPY --from=build /helloworld .
+# put the file in parent directory just like source repo
+COPY hello-world.json /
 
 EXPOSE 8080
 

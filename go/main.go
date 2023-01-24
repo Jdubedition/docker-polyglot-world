@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
 	"strings"
@@ -25,21 +26,38 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Not Found", http.StatusNotFound)
 		return
 	}
-
+	var languages []struct {
+		Language string `json:"language"`
+		Greeting string `json:"greeting"`
+	}
+	file, err := os.Open("../hello-world.json")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	decoder := json.NewDecoder(file)
+	err = decoder.Decode(&languages)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	random_language := languages[rand.Intn(len(languages))]
 	name, err := getHostname()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
 	message := struct {
-		Hello string `json:"hello"`
-		From  string `json:"from"`
+		Language       string `json:"language"`
+		Greeting       string `json:"greeting"`
+		From           string `json:"from"`
+		Implementation string `json:"implementation"`
 	}{
-		"World",
+		random_language.Language,
+		random_language.Greeting,
 		name,
+		"Go",
 	}
-
 	body, err := json.Marshal(message)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -47,7 +65,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(body)
-	log.Println("INFO: " + r.Host + " " + r.Method)
 }
 
 func main() {

@@ -1,0 +1,342 @@
+[
+  {
+    "language": "Afrikaans",
+    "greeting": "Hello Wêreld!"
+  },
+  {
+    "language": "Albanian",
+    "greeting": "Përshendetje Botë!"
+  },
+  {
+    "language": "Amharic",
+    "greeting": "ሰላም ልዑል!"
+  },
+  {
+    "language": "Arabic",
+    "greeting": "مرحبا بالعالم!"
+  },
+  {
+    "language": "Armenia",
+    "greeting": "Բարեւ աշխարհ!"
+  },
+  {
+    "language": "Basque",
+    "greeting": "Kaixo Mundua!"
+  },
+  {
+    "language": "Belarussian",
+    "greeting": "Прывітанне Сусвет!"
+  },
+  {
+    "language": "Bengali",
+    "greeting": "হ্যালো বিশ্ব!"
+  },
+  {
+    "language": "Bulgarian",
+    "greeting": "Здравей свят!"
+  },
+  {
+    "language": "Catalan",
+    "greeting": "Hola món!"
+  },
+  {
+    "language": "Chichewa",
+    "greeting": "Moni Dziko Lapansi!"
+  },
+  {
+    "language": "Chinese",
+    "greeting": "你好，世界！"
+  },
+  {
+    "language": "Croatian",
+    "greeting": "Pozdrav svijete!"
+  },
+  {
+    "language": "Czech",
+    "greeting": "Ahoj světe!"
+  },
+  {
+    "language": "Danish",
+    "greeting": "Hej Verden!"
+  },
+  {
+    "language": "Dutch",
+    "greeting": "Hallo Wereld!"
+  },
+  {
+    "language": "English",
+    "greeting": "Hello World!"
+  },
+  {
+    "language": "Esperanto",
+    "greeting": "Saluton mondo!"
+  },
+  {
+    "language": "Estonian",
+    "greeting": "Tere maailm!"
+  },
+  {
+    "language": "Finnish",
+    "greeting": "Hei maailma!"
+  },
+  {
+    "language": "French",
+    "greeting": "Bonjour monde!"
+  },
+  {
+    "language": "Frisian",
+    "greeting": "Hallo wrâld!"
+  },
+  {
+    "language": "Georgian",
+    "greeting": "გამარჯობა მსოფლიო!"
+  },
+  {
+    "language": "German",
+    "greeting": "Hallo Welt!"
+  },
+  {
+    "language": "Greek",
+    "greeting": "Γειά σου Κόσμε!"
+  },
+  {
+    "language": "Hausa",
+    "greeting": "Sannu Duniya!"
+  },
+  {
+    "language": "Hawaiian",
+    "greeting": "Aloha Honua!"
+  },
+  {
+    "language": "Hebrew",
+    "greeting": "שלום עולם!"
+  },
+  {
+    "language": "Hindi",
+    "greeting": "नमस्ते दुनिया!"
+  },
+  {
+    "language": "Hungarian",
+    "greeting": "Helló Világ!"
+  },
+  {
+    "language": "Icelandic",
+    "greeting": "Halló heimur!"
+  },
+  {
+    "language": "Igbo",
+    "greeting": "Ndewo Ụwa!"
+  },
+  {
+    "language": "Indonesian",
+    "greeting": "Halo Dunia!"
+  },
+  {
+    "language": "Italian",
+    "greeting": "Ciao mondo!"
+  },
+  {
+    "language": "Japanese",
+    "greeting": "こんにちは世界！"
+  },
+  {
+    "language": "Kazakh",
+    "greeting": "Сәлем Әлем!"
+  },
+  {
+    "language": "Khmer",
+    "greeting": "សួស្តី​ពិភពលោក!"
+  },
+  {
+    "language": "Kyrgyz",
+    "greeting": "Салам дүйнө!"
+  },
+  {
+    "language": "Lao",
+    "greeting": "ສະ​ບາຍ​ດີ​ຊາວ​ໂລກ!"
+  },
+  {
+    "language": "Latvian",
+    "greeting": "Sveika pasaule!"
+  },
+  {
+    "language": "Lithuanian",
+    "greeting": "Sveiki pasauli!"
+  },
+  {
+    "language": "Luxemburgish",
+    "greeting": "Moien Welt!"
+  },
+  {
+    "language": "Macedonian",
+    "greeting": "Здраво Свету!"
+  },
+  {
+    "language": "Malay",
+    "greeting": "Halo Dunia!"
+  },
+  {
+    "language": "Malayalam",
+    "greeting": "ഹലോ വേൾഡ്!"
+  },
+  {
+    "language": "Mongolian",
+    "greeting": "Сайн уу дэлхий!"
+  },
+  {
+    "language": "Myanmar",
+    "greeting": "မင်္ဂလာပါကမ္ဘာလောက!"
+  },
+  {
+    "language": "Nepali",
+    "greeting": "नमस्ते संसार!"
+  },
+  {
+    "language": "Norwegian",
+    "greeting": "Hei Verden!"
+  },
+  {
+    "language": "Pashto",
+    "greeting": "سلام نړی!"
+  },
+  {
+    "language": "Persian",
+    "greeting": "سلام دنیا!"
+  },
+  {
+    "language": "Polish",
+    "greeting": "Witaj świecie!"
+  },
+  {
+    "language": "Portuguese",
+    "greeting": "Olá mundo!"
+  },
+  {
+    "language": "Punjabi",
+    "greeting": "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਦੁਨਿਆ!"
+  },
+  {
+    "language": "Romanian",
+    "greeting": "Salut lume!"
+  },
+  {
+    "language": "Russian",
+    "greeting": "Привет мир!"
+  },
+  {
+    "language": "Samoan",
+    "greeting": "Talofa lalolagi!"
+  },
+  {
+    "language": "Scots Gaelic",
+    "greeting": "Hàlo a Shaoghail!"
+  },
+  {
+    "language": "Serbian",
+    "greeting": "Здраво Свете!"
+  },
+  {
+    "language": "Sesotho",
+    "greeting": "Lefatše Lumela!"
+  },
+  {
+    "language": "Shona",
+    "greeting": "Mhoro Nyika!"
+  },
+  {
+    "language": "Sindhi",
+    "greeting": "سلام دنيا!"
+  },
+  {
+    "language": "Sindarin",
+    "greeting": "Suilad i ambar"
+  },
+  {
+    "language": "Sinhalese",
+    "greeting": "හෙලෝ වර්ල්ඩ්!"
+  },
+  {
+    "language": "Slovak",
+    "greeting": "Ahoj svet!"
+  },
+  {
+    "language": "Slovenian",
+    "greeting": "Pozdravljen svet!"
+  },
+  {
+    "language": "Somali",
+    "greeting": "Salaan dunida!"
+  },
+  {
+    "language": "Spanish",
+    "greeting": "¡Hola mundo!"
+  },
+  {
+    "language": "Sundanese",
+    "greeting": "Halo dunya!"
+  },
+  {
+    "language": "Swahili",
+    "greeting": "Habari dunia!"
+  },
+  {
+    "language": "Swedish",
+    "greeting": "Hej världen!"
+  },
+  {
+    "language": "Tajik",
+    "greeting": "Салом Ҷаҳон!"
+  },
+  {
+    "language": "Tamil",
+    "greeting": "வணக்கம் உலகம்!"
+  },
+  {
+    "language": "Telugu",
+    "greeting": "హలో వరల్డ్!"
+  },
+  {
+    "language": "Thai",
+    "greeting": "สวัสดีชาวโลก!"
+  },
+  {
+    "language": "Turkish",
+    "greeting": "Merhaba Dünya!"
+  },
+  {
+    "language": "Ukrainian",
+    "greeting": "Привіт світ!"
+  },
+  {
+    "language": "Urdu",
+    "greeting": "ہیلو دنیا!"
+  },
+  {
+    "language": "Uzbek",
+    "greeting": "Salom Dunyo!"
+  },
+  {
+    "language": "Vietnamese",
+    "greeting": "Chào thế giới!"
+  },
+  {
+    "language": "Welsh",
+    "greeting": "Helo Byd!"
+  },
+  {
+    "language": "Xhosa",
+    "greeting": "Molo Lizwe!"
+  },
+  {
+    "language": "Yiddish",
+    "greeting": "היי וועלט!"
+  },
+  {
+    "language": "Yoruba",
+    "greeting": "Mo ki O Ile Aiye!"
+  },
+  {
+    "language": "Zulu",
+    "greeting": "Sawubona Mhlaba!"
+  }
+]

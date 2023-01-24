@@ -1,23 +1,32 @@
 const app = require("./app");
 const request = require("supertest");
-const os = require("os");
+const fs = require("fs");
 
-// Create a mock function that wraps the original os.hostname function
-const hostnameMock = jest.spyOn(os, "hostname");
+// Mock the hostname function
+jest.mock("os");
+const hostnameMock = require("os").hostname;
+hostnameMock.mockImplementation(() => "test-hostname");
 
 describe("App", () => {
   describe("GET /", () => {
-    afterEach(() => {
-      // Reset the mock after the test is finished
-      hostnameMock.mockReset();
-    });
-
-    it("should return a JSON object with a 'hello' and 'from' property", (done) => {
+    it("should return a JSON object with a 'language', 'greeting', 'from', and 'implementation' property", (done) => {
       request(app)
         .get("/")
         .end((err, res) => {
-          expect(res.body).toHaveProperty("hello");
-          expect(res.body).toHaveProperty("from");
+          let data = require("../hello-world.json");
+          let response = res.body;
+          let languageExists = data.some(function (el) {
+            return el.language === response.language;
+          });
+          let greetingExists = data.some(function (el) {
+            return el.greeting === response.greeting;
+          });
+          expect(response).toHaveProperty("language");
+          expect(response).toHaveProperty("greeting");
+          expect(response).toHaveProperty("from");
+          expect(response).toHaveProperty("implementation");
+          expect(languageExists).toBe(true);
+          expect(greetingExists).toBe(true);
           done();
         });
     });

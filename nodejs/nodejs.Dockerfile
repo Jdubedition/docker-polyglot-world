@@ -3,11 +3,12 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY ["package.json", "yarn.lock", "app.js", "./"]
+COPY ["nodejs/package.json", "nodejs/yarn.lock", "nodejs/app.js", "./"]
 
 RUN yarn install --production
 
-COPY server.js .
+COPY nodejs/server.js .
+COPY ../hello-world.json /
 
 EXPOSE 8080
 
