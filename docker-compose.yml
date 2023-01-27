@@ -18,18 +18,18 @@ services:
       dockerfile: nodejs/nodejs.Dockerfile
     ports:
       - "8082:8080"
+  rust-docker-polyglot-world:
+    build:
+      context: .
+      dockerfile: rust/rust.Dockerfile
+    ports:
+      - "8085:8080"
   deno-docker-polyglot-world:
     build:
       context: deno/.
       dockerfile: deno.Dockerfile
     ports:
       - "8084:8080"
-  rust-docker-polyglot-world:
-    build:
-      context: rust/.
-      dockerfile: rust.Dockerfile
-    ports:
-      - "8085:8080"
   crystal-docker-polyglot-world:
     build:
       context: crystal/.

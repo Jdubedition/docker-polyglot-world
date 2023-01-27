@@ -47,7 +47,7 @@ docker build -t nodejs-docker-polyglot-world -f nodejs/nodejs.Dockerfile .  && d
 ### Rust (hyper)
 
 ```text
-docker build -t rust-docker-polyglot-world -f rust/rust.Dockerfile rust  && docker run -it -p 8080:8080 rust-docker-polyglot-world
+docker build -t rust-docker-polyglot-world -f rust/rust.Dockerfile .  && docker run -it -p 8080:8080 rust-docker-polyglot-world
 ```
 
 ### Deno
