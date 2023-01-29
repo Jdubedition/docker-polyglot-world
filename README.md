@@ -53,7 +53,7 @@ docker build -t rust-docker-polyglot-world -f rust/rust.Dockerfile .  && docker 
 ### Deno
 
 ```text
-docker build -t deno-docker-polyglot-world -f deno/deno.Dockerfile deno  && docker run -it -p 8080:8080 deno-docker-polyglot-world
+docker build -t deno-docker-polyglot-world -f deno/deno.Dockerfile .  && docker run -it -p 8080:8080 deno-docker-polyglot-world
 ```
 
 ### Crystal

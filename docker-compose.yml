@@ -26,8 +26,8 @@ services:
       - "8085:8080"
   deno-docker-polyglot-world:
     build:
-      context: deno/.
-      dockerfile: deno.Dockerfile
+      context: .
+      dockerfile: deno/deno.Dockerfile
     ports:
       - "8084:8080"
   crystal-docker-polyglot-world:
