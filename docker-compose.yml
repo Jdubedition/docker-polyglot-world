@@ -1,5 +1,14 @@
 version: "3.9"
 services:
+  nginx-postman:
+    container_name: nginx-postman
+    image: nginx:alpine
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./hello-world.json:/usr/share/nginx/html/hello-world.json:ro
   python-docker-polyglot-world:
     build:
       context: .
