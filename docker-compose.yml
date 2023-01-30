@@ -32,7 +32,7 @@ services:
       - "8084:8080"
   crystal-docker-polyglot-world:
     build:
-      context: crystal/.
-      dockerfile: crystal.Dockerfile
+      context: .
+      dockerfile: crystal/crystal.Dockerfile
     ports:
       - "8086:8080"

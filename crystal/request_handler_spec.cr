@@ -5,6 +5,10 @@ require "./request_handler"
 
 describe "handle_request" do
   it "returns a JSON response" do
+    # Load the hello-world.json file
+    file = File.read("../hello-world.json")
+    data = JSON.parse(file)
+
     # Create a mock request
     request = HTTP::Request.new("http://localhost:8080", "GET", headers: HTTP::Headers{"Accept" => "application/json"})
 
@@ -17,9 +21,15 @@ describe "handle_request" do
     handle_request(context)
     response.close
 
+    # Get the response body
+    response_body = io.to_s.split("\r\n\r\n", 2).last
+
+    # Parse the response body
+    response_body_json = JSON.parse(response_body)
+
     context.response.status_code.should eq 200
     context.response.headers["Content-Type"].should eq "application/json"
-    io.rewind
-    io.to_s.should eq "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nContent-Length: 41\r\n\r\n{\"hello\":\"World\", \"from\": \"d17d9e6f8396\"}"
+    data.to_s.should contain response_body_json["greeting"].to_s
+    data.to_s.should contain response_body_json["language"].to_s
   end
 end

@@ -59,7 +59,7 @@ docker build -t deno-docker-polyglot-world -f deno/deno.Dockerfile .  && docker 
 ### Crystal
 
 ```text
-docker build -t crystal-docker-polyglot-world -f crystal/crystal.Dockerfile crystal  && docker run -it -p 8080:8080 crystal-docker-polyglot-world
+docker build -t crystal-docker-polyglot-world -f crystal/crystal.Dockerfile .  && docker run -it -p 8080:8080 crystal-docker-polyglot-world
 ```
 
 ## Developing with Docker containers
