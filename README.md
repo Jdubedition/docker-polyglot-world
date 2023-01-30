@@ -227,3 +227,4 @@ crystal spec *_spec.cr
 - https://github.com/crystal-lang/crystal/pull/11540
 - https://www.postman.com/
 - https://github.com/postmanlabs/newman
+- https://hub.docker.com/_/nginx
