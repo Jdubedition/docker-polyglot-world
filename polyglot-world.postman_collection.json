@@ -126,6 +126,10 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
+					"pm.sendRequest(\"192.168.1.50:8080/hello-world.json\", function (err, response) {",
+					"    var response_json = response.json();",
+					"    pm.globals.set(\"response_json\", response_json);",
+					"});",
 					""
 				]
 			}
@@ -135,13 +139,6 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					"pm.sendRequest(\"localhost:8080/hello-world.json\", function (err, response) {",
-					"    var response_json = response.json();",
-					"    // console.log(response_json);",
-					"    // pm.collectionVariables.set(\"helloWorldJSON\", response_json);",
-					"    pm.globals.set(\"response_json\", response_json);",
-					"});",
-					"",
 					"pm.test(\"greeting\", function () {",
 					"    var jsonData = pm.response.json();",
 					"    var greetingMatch = pm.globals.get(\"response_json\").find(x => {",
@@ -161,6 +158,12 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "helloWorldJSON",
+			"value": ""
 		}
 	]
 }
