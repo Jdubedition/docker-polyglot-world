@@ -228,3 +228,4 @@ crystal spec *_spec.cr
 - https://www.postman.com/
 - https://github.com/postmanlabs/newman
 - https://hub.docker.com/_/nginx
+- https://mixable.blog/hello-world-in-74-natural-languages/
