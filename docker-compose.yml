@@ -1,7 +1,6 @@
 version: "3.9"
 services:
-  nginx-postman:
-    container_name: nginx-postman
+  nginx-postman-docker-polyglot-world:
     image: nginx:alpine
     restart: always
     ports:
