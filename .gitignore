@@ -4,3 +4,9 @@ nodejs/node_modules
 
 python/__pycache__
 .pytest_cache
+
+.terraform
+.terraform.lock.hcl
+secret.tfvars
+.terraform.tfplan
+terraform/cloudflared

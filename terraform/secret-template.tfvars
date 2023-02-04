@@ -1,0 +1,5 @@
+cloudflare_email = ""
+cloudflare_zone = ""
+cloudflare_zone_id = ""
+cloudflare_token = ""
+cloudflare_account_id = ""

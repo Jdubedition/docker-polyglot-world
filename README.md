@@ -23,7 +23,7 @@ Programming languages:
 ### All at once with Docker Compose
 
 ```text
-docker compose up --build
+docker compose --profile local-only up --build
 ```
 
 ### Python (Starlette)
@@ -202,6 +202,13 @@ crystal spec *_spec.cr
 * Collection: `newman run polyglot-world.postman_collection.json`
 * Number and specific tests: `newman run polyglot-world.postman_collection.json -n 1 --folder Python`
 
+## Supercharge With Cloudflare Tunnel
+
+* Create Cloudflare account
+* Enable Cloudflare Tunnel
+* Copy secret-template.tfvars to secret.tfvars and set the variables
+* `docker compose --profile cloudflare-tunnel up --build`
+
 ## Inspired By
 
 - https://www.starlette.io/
@@ -229,3 +236,9 @@ crystal spec *_spec.cr
 - https://github.com/postmanlabs/newman
 - https://hub.docker.com/_/nginx
 - https://mixable.blog/hello-world-in-74-natural-languages/
+- https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/
+- https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/deployment-guides/terraform/
+- https://hub.docker.com/r/cloudflare/cloudflared
+- https://hub.docker.com/r/hashicorp/terraform
+- https://developer.hashicorp.com/terraform/tutorials/configuration-language/sensitive-variables
+- https://docs.docker.com/compose/compose-file/

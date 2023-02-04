@@ -2,6 +2,9 @@ version: "3.9"
 services:
   nginx-postman-docker-polyglot-world:
     image: nginx:alpine
+    profiles:
+      - "local-only"
+      - "cloudflare-tunnel"
     restart: always
     ports:
       - "8080:80"
@@ -12,35 +15,120 @@ services:
     build:
       context: .
       dockerfile: python/python.Dockerfile
+    profiles:
+      - "local-only"
+      - "cloudflare-tunnel"
     ports:
       - "8081:8080"
   go-docker-polyglot-world:
     build:
       context: .
       dockerfile: go/go.Dockerfile
+    profiles:
+      - "local-only"
+      - "cloudflare-tunnel"
     ports:
       - "8083:8080"
   nodejs-docker-polyglot-world:
     build:
       context: .
       dockerfile: nodejs/nodejs.Dockerfile
+    profiles:
+      - "local-only"
+      - "cloudflare-tunnel"
     ports:
       - "8082:8080"
   rust-docker-polyglot-world:
     build:
       context: .
       dockerfile: rust/rust.Dockerfile
+    profiles:
+      - "local-only"
+      - "cloudflare-tunnel"
     ports:
       - "8085:8080"
   deno-docker-polyglot-world:
     build:
       context: .
       dockerfile: deno/deno.Dockerfile
+    profiles:
+      - "local-only"
+      - "cloudflare-tunnel"
     ports:
       - "8084:8080"
   crystal-docker-polyglot-world:
     build:
       context: .
       dockerfile: crystal/crystal.Dockerfile
+    profiles:
+      - "local-only"
+      - "cloudflare-tunnel"
     ports:
       - "8086:8080"
+  terraform-docker-polyglot-world-init:
+    image: hashicorp/terraform
+    profiles:
+      - cloudflare-tunnel
+    command:
+      - -chdir=/terraform
+      - init
+    volumes:
+      - ./terraform:/terraform:rw
+    depends_on:
+      - nginx-postman-docker-polyglot-world
+  terraform-docker-polyglot-world-plan:
+    image: hashicorp/terraform
+    profiles:
+      - cloudflare-tunnel
+    command:
+      - -chdir=/terraform
+      - plan
+      - -var-file=secret.tfvars
+      - -out=.terraform.tfplan
+    volumes:
+      - ./terraform:/terraform:rw
+    depends_on:
+      terraform-docker-polyglot-world-init:
+        condition: service_completed_successfully
+  terraform-docker-polyglot-world-apply:
+    image: hashicorp/terraform
+    profiles:
+      - cloudflare-tunnel
+    command:
+      - -chdir=/terraform
+      - apply
+      - .terraform.tfplan
+    volumes:
+      - ./terraform:/terraform:rw
+    depends_on:
+      terraform-docker-polyglot-world-plan:
+        condition: service_completed_successfully
+  cloudflared-docker-polyglot-world:
+    image: cloudflare/cloudflared
+    profiles:
+      - cloudflare-tunnel
+    command:
+      - tunnel
+      - run
+    volumes:
+      - ./terraform/cloudflared:/etc/cloudflared:rw
+    depends_on:
+      terraform-docker-polyglot-world-apply:
+        condition: service_completed_successfully
+    # needs to be in host mode to be able to access ports from localhost
+    network_mode: "host"
+  # Only run this if you want to remove the tunnel from Cloudflare
+  terraform-docker-polyglot-world-destroy:
+    image: hashicorp/terraform
+    profiles:
+      - destroy-cloudflare-tunnel
+    command:
+      - -chdir=/terraform
+      - destroy
+      - -var-file=secret.tfvars
+      - -auto-approve
+    volumes:
+      - ./terraform:/terraform:rw
+    depends_on:
+      terraform-docker-polyglot-world-init:
+        condition: service_completed_successfully
