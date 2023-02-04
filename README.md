@@ -69,13 +69,13 @@ docker build -t crystal-docker-polyglot-world -f crystal/crystal.Dockerfile .  &
 #### With OMZ and selecting name of the container
 
 ```text
-docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-python python:3.11.0 /docker-polyglot-world/utilities/use-omz.sh
+docker run -d -it --network=host -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-python python:3.11.0 /docker-polyglot-world/utilities/use-omz.sh
 ```
 
 #### With BASH
 
 ```text
-docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world python:3.11.0 /bin/bash
+docker run -d -it --network=host -v ~/docker-polyglot-world:/docker-polyglot-world python:3.11.0 /bin/bash
 ```
 
 ### Go
@@ -83,7 +83,7 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world python:3.11.
 #### With OMZ and selecting name of the container
 
 ```text
-docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-go golang:1.19.3 /docker-polyglot-world/utilities/use-omz.sh
+docker run -d -it --network=host -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-go golang:1.19.3 /docker-polyglot-world/utilities/use-omz.sh
 ```
 
 ### Node.js
@@ -91,7 +91,7 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docke
 #### With OMZ and selecting name of the container
 
 ```text
-docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-nodejs node:19 /docker-polyglot-world/utilities/use-omz.sh
+docker run -d -it --network=host -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-nodejs node:19 /docker-polyglot-world/utilities/use-omz.sh
 ```
 
 ### Rust
@@ -99,7 +99,7 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docke
 #### With OMZ and selecting name of the container
 
 ```text
-docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-rust rust:1.65 /docker-polyglot-world/utilities/use-omz.sh
+docker run -d -it --network=host -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-rust rust:1.65 /docker-polyglot-world/utilities/use-omz.sh
 ```
 
 ### Deno
@@ -107,7 +107,7 @@ docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docke
 #### With OMZ and selecting name of the container
 
 ```text
-docker run -d -it -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-deno denoland/deno:1.28.1 /docker-polyglot-world/utilities/use-omz.sh
+docker run -d -it --network=host -v ~/docker-polyglot-world:/docker-polyglot-world --name docker-polyglot-world-deno denoland/deno:1.28.1 /docker-polyglot-world/utilities/use-omz.sh
 ```
 
 IMPORTANT! - After attaching to container:  Open the VS Code command palette with Ctrl+Shift+P, and run the Deno: Initialize Workspace Configuration command.
@@ -200,14 +200,17 @@ crystal spec *_spec.cr
 * Use Nodejs dev container
 * `npm install -g newman`
 * Collection: `newman run polyglot-world.postman_collection.json`
+* Collection with Cloudflare Tunnel: `newman run polyglot-world.postman_collection.json --env-var hostname=<<YOUR CLOUDFLARE TUNNEL HOSTNAME>>`
 * Number and specific tests: `newman run polyglot-world.postman_collection.json -n 1 --folder Python`
 
-## Supercharge With Cloudflare Tunnel
+## Supercharge With Cloudflare Tunnel (Optional)
 
 * Create Cloudflare account
 * Enable Cloudflare Tunnel
 * Copy secret-template.tfvars to secret.tfvars and set the variables
 * `docker compose --profile cloudflare-tunnel up --build`
+* If you want to remove Cloudflare Tunnel: `docker compose --profile destroy-cloudflare-tunnel up`
+* If you do not remove Cloudflare Tunnel, you will want to save the following file or you will need to manually delete the Cloudflare components: `terraform.tfstate`
 
 ## Inspired By
 

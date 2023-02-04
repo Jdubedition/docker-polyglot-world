@@ -11,15 +11,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://192.168.1.50:8081",
-					"protocol": "http",
+					"raw": "{{python-uri}}",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"50"
-					],
-					"port": "8081"
+						"{{python-uri}}"
+					]
 				}
 			},
 			"response": []
@@ -30,15 +25,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://192.168.1.50:8084",
-					"protocol": "http",
+					"raw": "{{deno-uri}}",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"50"
-					],
-					"port": "8084"
+						"{{deno-uri}}"
+					]
 				}
 			},
 			"response": []
@@ -49,15 +39,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://192.168.1.50:8082",
-					"protocol": "http",
+					"raw": "{{nodejs-uri}}",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"50"
-					],
-					"port": "8082"
+						"{{nodejs-uri}}"
+					]
 				}
 			},
 			"response": []
@@ -68,15 +53,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://192.168.1.50:8083",
-					"protocol": "http",
+					"raw": "{{go-uri}}",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"50"
-					],
-					"port": "8083"
+						"{{go-uri}}"
+					]
 				}
 			},
 			"response": []
@@ -87,15 +67,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://192.168.1.50:8085",
-					"protocol": "http",
+					"raw": "{{rust-uri}}",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"50"
-					],
-					"port": "8085"
+						"{{rust-uri}}"
+					]
 				}
 			},
 			"response": []
@@ -106,15 +81,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://192.168.1.50:8086",
-					"protocol": "http",
+					"raw": "{{crystal-uri}}",
 					"host": [
-						"192",
-						"168",
-						"1",
-						"50"
-					],
-					"port": "8086"
+						"{{crystal-uri}}"
+					]
 				}
 			},
 			"response": []
@@ -126,7 +96,26 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					"pm.sendRequest(\"192.168.1.50:8080/hello-world.json\", function (err, response) {",
+					"var host = pm.request.url.host;",
+					"var hostname = pm.variables.get(\"hostname\")",
+					"",
+					"switch (host[0]) {",
+					"    case \"{{python-uri}}\":",
+					"        pm.collectionVariables.set(\"python-uri\", hostname === \"localhost\" ? \"http://localhost:8081\" : `https://python-dpw.${hostname}`);",
+					"    case \"{{go-uri}}\":",
+					"        pm.collectionVariables.set(\"go-uri\", hostname === \"localhost\" ? \"http://localhost:8083\" : `https://go-dpw.${hostname}`);",
+					"    case \"{{nodejs-uri}}\":",
+					"        pm.collectionVariables.set(\"nodejs-uri\", hostname === \"localhost\" ? \"http://localhost:8082\" : `https://nodejs-dpw.${hostname}`);",
+					"    case \"{{rust-uri}}\":",
+					"        pm.collectionVariables.set(\"rust-uri\", hostname === \"localhost\" ? \"http://localhost:8085\" : `https://rust-dpw.${hostname}`);",
+					"    case \"{{deno-uri}}\":",
+					"        pm.collectionVariables.set(\"deno-uri\", hostname === \"localhost\" ? \"http://localhost:8084\" : `https://deno-dpw.${hostname}`);",
+					"    case \"{{crystal-uri}}\":",
+					"        pm.collectionVariables.set(\"crystal-uri\", hostname === \"localhost\" ? \"http://localhost:8086\" : `https://crystal-dpw.${hostname}`);",
+					"}",
+					"",
+					"var jsonUri = hostname === \"localhost\" ? \"http://localhost:8080/hello-world.json\" : \"https://dpw.cfive.dev/hello-world.json\";",
+					"pm.sendRequest(jsonUri, function (err, response) {",
 					"    var response_json = response.json();",
 					"    pm.globals.set(\"response_json\", response_json);",
 					"});",
@@ -162,7 +151,32 @@
 	],
 	"variable": [
 		{
-			"key": "helloWorldJSON",
+			"key": "hostname",
+			"value": "localhost",
+			"type": "default"
+		},
+		{
+			"key": "python-uri",
+			"value": ""
+		},
+		{
+			"key": "go-uri",
+			"value": ""
+		},
+		{
+			"key": "nodejs-uri",
+			"value": ""
+		},
+		{
+			"key": "rust-uri",
+			"value": ""
+		},
+		{
+			"key": "deno-uri",
+			"value": ""
+		},
+		{
+			"key": "crystal-uri",
 			"value": ""
 		}
 	]
