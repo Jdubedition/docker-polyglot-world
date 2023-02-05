@@ -210,7 +210,7 @@ crystal spec *_spec.cr
 * Copy secret-template.tfvars to secret.tfvars and set the variables
 * `docker compose --profile cloudflare-tunnel up --build`
 * If you want to remove Cloudflare Tunnel: `docker compose --profile destroy-cloudflare-tunnel up`
-* If you do not remove Cloudflare Tunnel, you will want to save the following file or you will need to manually delete the Cloudflare components: `terraform.tfstate`
+* If you do not remove Cloudflare Tunnel, you will want to save the following file or you will need to modify or delete the Cloudflare components with Terraform: `terraform.tfstate`
 
 ## Inspired By
 
