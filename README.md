@@ -200,7 +200,7 @@ crystal spec *_spec.cr
 * Use Nodejs dev container
 * `npm install -g newman`
 * Collection: `newman run polyglot-world.postman_collection.json`
-* Collection with Cloudflare Tunnel: `newman run polyglot-world.postman_collection.json --env-var hostname=<<YOUR CLOUDFLARE TUNNEL HOSTNAME>>`
+* Collection with Cloudflare Tunnel: `newman run polyglot-world.postman_collection.js=on --env-var hostname=<<YOUR CLOUDFLARE TUNNEL HOSTNAME>>`
 * Number and specific tests: `newman run polyglot-world.postman_collection.json -n 1 --folder Python`
 
 ## Supercharge With Cloudflare Tunnel (Optional)
