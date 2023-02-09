@@ -72,6 +72,8 @@ services:
     command:
       - -chdir=/terraform
       - init
+    # env_file used to pass Terraform Cloud API token
+    env_file: .env
     volumes:
       - ./terraform:/terraform:rw
     depends_on:
@@ -84,7 +86,8 @@ services:
       - -chdir=/terraform
       - plan
       - -var-file=secret.tfvars
-      - -out=.terraform.tfplan
+    # env_file used to pass Terraform Cloud API token
+    env_file: .env
     volumes:
       - ./terraform:/terraform:rw
     depends_on:
@@ -97,7 +100,10 @@ services:
     command:
       - -chdir=/terraform
       - apply
-      - .terraform.tfplan
+      - -var-file=secret.tfvars
+      - -auto-approve
+    # env_file used to pass Terraform Cloud API token
+    env_file: .env
     volumes:
       - ./terraform:/terraform:rw
     depends_on:
@@ -127,6 +133,8 @@ services:
       - destroy
       - -var-file=secret.tfvars
       - -auto-approve
+    # env_file used to pass Terraform Cloud API token
+    env_file: .env
     volumes:
       - ./terraform:/terraform:rw
     depends_on:

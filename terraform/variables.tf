@@ -26,6 +26,21 @@ variable "cloudflare_token" {
   type        = string
 }
 
+variable "cloudflare_r2_access_key_id" {
+  description = "Cloudflare R2 Access Key ID"
+  type        = string
+}
+
+variable "cloudflare_r2_secret_access_key" {
+  description = "Cloudflare R2 Secret Access Key"
+  type        = string
+}
+  
+variable "cloudflare_r2_account_id" {
+  description = "Cloudflare R2 Account ID"
+  type        = string
+}
+  
 # Docker variables
 variable "docker_containers" {
   description = "List of docker containers to run"

@@ -10,3 +10,5 @@ python/__pycache__
 secret.tfvars
 .terraform.tfplan
 terraform/cloudflared
+
+.env

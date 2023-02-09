@@ -207,6 +207,8 @@ crystal spec *_spec.cr
 
 * Create Cloudflare account
 * Enable Cloudflare Tunnel
+* Create Terraform Cloud account
+* Copy .env-template to .env and set the variables
 * Copy secret-template.tfvars to secret.tfvars and set the variables
 * `docker compose --profile cloudflare-tunnel up --build`
 * If you want to remove Cloudflare Tunnel: `docker compose --profile destroy-cloudflare-tunnel up`
