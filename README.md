@@ -207,7 +207,12 @@ crystal spec *_spec.cr
 
 * Create Cloudflare account
 * Enable Cloudflare Tunnel
-* Create Terraform Cloud account
+* Terraform Cloud
+  * Create Terraform Cloud account
+  * In Terraform Cloud, create a new workspace
+    * Choose CLI-driven workflow
+    * Name: `docker-polyglot-world`
+  * Open Workspace settings and set Execution Mode to Local
 * Copy .env-template to .env and set the variables
 * Copy secret-template.tfvars to secret.tfvars and set the variables
 * `docker compose --profile cloudflare-tunnel up --build`
