@@ -206,18 +206,30 @@ crystal spec *_spec.cr
 ## Supercharge With Cloudflare Tunnel (Optional)
 
 * Create Cloudflare account
+* Add your domain to Cloudflare
 * Enable Cloudflare Tunnel
+  * From the Cloudflare dashboard, click on the Zero Trust menu item
+  * Click on the Access menu item
+  * Click on Tunnels menu item
 * Terraform Cloud
   * Create Terraform Cloud account
   * In Terraform Cloud, create a new workspace
     * Choose CLI-driven workflow
     * Name: `docker-polyglot-world`
   * Open Workspace settings and set Execution Mode to Local
-* Copy .env-template to .env and set the variables
-* Copy secret-template.tfvars to secret.tfvars and set the variables
+* Copy `.env-template` to `.env` and set the variables within
+  * In Terraform Cloud, click on your user profile icon and select User Settings
+  * Click on Tokens menu item
+  * Click on Create an API Token button
+  * Copy the token to the `.env` file
+* Copy `secret-template.tfvars` to `secret.tfvars` and set the variables within
+  * Create an API token in Cloudflare with the permissions described here:  https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/deployment-guides/terraform/#3-create-a-cloudflare-api-token
+  * On Cloudflare dashboard, click on your website
+  * On the right side of the page, click copy the following IDs
+    * Zone ID
+    * Account ID
 * `docker compose --profile cloudflare-tunnel up --build`
 * If you want to remove Cloudflare Tunnel: `docker compose --profile destroy-cloudflare-tunnel up`
-* If you do not remove Cloudflare Tunnel, you will want to save the following file or you will need to modify or delete the Cloudflare components with Terraform: `terraform.tfstate`
 
 ## Inspired By
 
